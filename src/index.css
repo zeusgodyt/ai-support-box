@@ -1,0 +1,117 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Professional Light Mode Palette */
+    --background: 220 25% 98%; /* Soft off-white */
+    --foreground: 220 15% 18%; /* Deep slate gray */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 15% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 18%;
+
+    --primary: 222 85% 55%; /* Modern blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 210 16% 93%; /* Light gray-blue */
+    --secondary-foreground: 222 85% 45%; /* Muted blue */
+
+    --muted: 220 16% 90%; /* Muted gray */
+    --muted-foreground: 220 10% 50%; /* Muted text */
+
+    --accent: 200 100% 92%; /* Soft cyan accent */
+    --accent-foreground: 222 85% 55%; /* Blue accent text */
+
+    --destructive: 0 75% 60%; /* Professional red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 16% 85%; /* Subtle border */
+    --input: 220 16% 85%;
+    --ring: 222 85% 55%; /* Blue focus ring */
+
+    --radius: 0.75rem;
+
+    /* Sidebar specific colors */
+    --sidebar-background: 220 16% 96%;
+    --sidebar-foreground: 220 15% 18%;
+    --sidebar-primary: 222 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 100% 92%;
+    --sidebar-accent-foreground: 222 85% 45%;
+    --sidebar-border: 220 16% 85%;
+    --sidebar-ring: 222 85% 55%;
+  }
+
+  .dark {
+    /* Professional Dark Mode Palette */
+    --background: 222 47% 10%; /* Deep navy */
+    --foreground: 220 25% 96%; /* Light gray */
+
+    --card: 222 40% 14%; /* Slightly lighter navy */
+    --card-foreground: 220 25% 96%;
+
+    --popover: 222 40% 14%;
+    --popover-foreground: 220 25% 96%;
+
+    --primary: 200 100% 70%; /* Vibrant cyan */
+    --primary-foreground: 222 47% 10%; /* Deep navy for contrast */
+
+    --secondary: 220 16% 20%; /* Dark gray-blue */
+    --secondary-foreground: 220 25% 90%; /* Lighter gray */
+
+    --muted: 220 16% 25%; /* Muted dark gray */
+    --muted-foreground: 220 10% 65%; /* Muted text */
+
+    --accent: 200 100% 24%; /* Deep cyan accent */
+    --accent-foreground: 200 100% 70%; /* Cyan accent text */
+
+    --destructive: 0 75% 60%; /* Professional red */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 16% 25%; /* Subtle dark border */
+    --input: 220 16% 25%;
+    --ring: 200 100% 70%; /* Cyan focus ring */
+
+    /* Sidebar specific colors */
+    --sidebar-background: 222 40% 12%;
+    --sidebar-foreground: 220 25% 96%;
+    --sidebar-primary: 200 100% 70%;
+    --sidebar-primary-foreground: 222 47% 10%;
+    --sidebar-accent: 200 100% 24%;
+    --sidebar-accent-foreground: 220 25% 90%;
+    --sidebar-border: 220 16% 25%;
+    --sidebar-ring: 200 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar for a more modern look */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background; /* Use background for track */
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full; /* Use muted for thumb */
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/60; /* Use primary (or a variant) for hover */
+  }
+}
